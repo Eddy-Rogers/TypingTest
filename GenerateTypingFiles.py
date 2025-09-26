@@ -1,7 +1,7 @@
 import random
 
 def main():
-    file = open("./Files/commonwords.csv", "r")
+    file = open("Inputs/commonwords.csv", "r")
 
     text = file.read()
 
