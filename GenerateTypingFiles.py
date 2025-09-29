@@ -5,8 +5,8 @@ configuration_values = [
     ("random_1000", "length", 1000, '', True),
     ("random_2000", "length", 2000, '', True),
     ("random_3000", "length", 3000, '', True),
-    ("contains_q", "letter", -1, 'q', True),
-    ("contains_p", "letter", -1, 'p', True)]
+    ("contains_q", "letter", 3000, 'q', True),
+    ("contains_p", "letter", 3000, 'p', True)]
 
 p_output = "./Outputs/"
 
@@ -45,13 +45,13 @@ def populate_files(current_count, word):
 
 
 def load_clean_file():
-    file = open("Inputs/commonwords.csv", "r")
+    file = open("Inputs/third_of_a_mil.txt", "r")
     text = file.read()
 
-    word_array = text.split(',')
+    word_array = text.split('\n')
 
     for word in word_array:
-        clean = word[0:word.find("(") - 1].strip()
+        clean = word.strip()
 
         if len(clean) > 1 and clean.find(" ") == -1 and clean.find(".") == -1:
             clean_array.append(clean)
